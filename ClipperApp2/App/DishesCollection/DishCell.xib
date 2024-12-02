@@ -24,26 +24,27 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="185" height="272"/>
+            <rect key="frame" x="0.0" y="0.0" width="123" height="180"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gDy-Cd-WWi">
-                    <rect key="frame" x="40" y="144" width="112" height="108"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gDy-Cd-WWi">
+                    <rect key="frame" x="20" y="68" width="83" height="92"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="83" id="QXU-Xu-jx5"/>
+                        <constraint firstAttribute="height" constant="92" id="llu-rU-o6D"/>
+                    </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="03A-LA-yDY"/>
                 </imageView>
-                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DwK-0M-Vff">
-                    <rect key="frame" x="74" y="75" width="37" height="16"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DwK-0M-Vff">
+                    <rect key="frame" x="43" y="35" width="37" height="16"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="gHh-90-S2h">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i3y-vE-6F4">
-                    <rect key="frame" x="74" y="39" width="37" height="16"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="i3y-vE-6F4">
+                    <rect key="frame" x="43" y="11" width="37" height="16"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="aGf-1V-03d">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -51,7 +52,15 @@
                     </textFieldCell>
                 </textField>
             </subviews>
-            <point key="canvasLocation" x="265.5" y="126"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="i3y-vE-6F4" secondAttribute="bottom" constant="11" id="IML-aX-anw"/>
+                <constraint firstItem="DwK-0M-Vff" firstAttribute="top" secondItem="gDy-Cd-WWi" secondAttribute="bottom" constant="17" id="P2D-da-g3i"/>
+                <constraint firstItem="gDy-Cd-WWi" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="UPJ-v4-Pht"/>
+                <constraint firstItem="i3y-vE-6F4" firstAttribute="top" secondItem="DwK-0M-Vff" secondAttribute="bottom" constant="8" symbolic="YES" id="cRt-GC-AuD"/>
+                <constraint firstItem="i3y-vE-6F4" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="e6z-kC-hKP"/>
+                <constraint firstItem="DwK-0M-Vff" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="egq-N8-Mf5"/>
+            </constraints>
+            <point key="canvasLocation" x="264.5" y="126"/>
         </customView>
     </objects>
 </document>
