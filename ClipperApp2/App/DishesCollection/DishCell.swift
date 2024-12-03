@@ -40,11 +40,6 @@ class DishCell: NSCollectionViewItem {
     @IBOutlet weak var priceLabel: NSTextField!
     
     
-    
-    //
-    
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         

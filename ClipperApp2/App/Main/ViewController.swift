@@ -1,9 +1,19 @@
+
+
+
 import AppKit
 
 
 protocol CollectionUpdater: AnyObject {
     func reloadCollection()
 }
+
+protocol WindowOpener: AnyObject {
+    
+    func openNewDishWindow()
+}
+
+
 
 
 class ViewController: NSViewController {
@@ -29,6 +39,14 @@ class ViewController: NSViewController {
         model.userWantsToAddPlaceholderDish()
     }
     
+    
+    @IBAction func userDidClickAddNewButton(_ sender: NSButton) {
+        model.userWantsToCreateNewDish()
+    }
+
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         dishesCollectionView.register(DishCell.self, forItemWithIdentifier: .init("dishCell"))
@@ -36,6 +54,10 @@ class ViewController: NSViewController {
         dishesCollectionView.isSelectable = true
         
         model.collectionUpdater = self
+        
+        model.windowOpener = self
+        
+        model.viewIsReadyForData()
     }
 
     override var representedObject: Any? {
@@ -97,5 +119,30 @@ extension ViewController: CollectionUpdater {
     func reloadCollection() {
         dishesCollectionView.reloadData()
     }
+}
+
+
+extension ViewController: WindowOpener {
+    
+    func openNewDishWindow() {
+       
+        let newDishModel = NewDishFormModel(onAddDish: { newDish in
+            self.model.newDishWasCreated(dish: newDish)
+        })
+        
+        
+        let newDishViewController = NewDishFormController(
+            model: newDishModel
+        )
+        
+        let window = NSWindow(contentViewController: newDishViewController)
+        
+        let windowController = NSWindowController(window: window)
+        
+        windowController.showWindow(nil)
+    }
+    
+
+    
 }
 

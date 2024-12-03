@@ -12,6 +12,7 @@ struct MainModel {
     
     
     weak var collectionUpdater: CollectionUpdater?
+    weak var windowOpener: WindowOpener?
     
     
     var dishes: [Dish] = [

@@ -24,6 +24,19 @@ extension MainModel {
         collectionUpdater?.reloadCollection()
     }
     
-
+    func userWantsToCreateNewDish() {
+        windowOpener?.openNewDishWindow()
+    }
     
+    mutating func newDishWasCreated(dish: Dish) {
+        dishes.append(dish)
+        collectionUpdater?.reloadCollection()
+    }
+    
+    
+    func viewIsReadyForData() {
+        
+    }
+    
+   
 }
