@@ -32,6 +32,7 @@ class NewDishFormController: NSViewController {
     
     
     @IBAction func userDidClickCancelButton(_ sender: Any) {
+        model.userWantsToCancelDishCreation()
     }
     
     @IBOutlet weak var dishImageURL: NSTextField!
@@ -72,6 +73,8 @@ class NewDishFormController: NSViewController {
     }
 
     
+    
+        
     @IBAction func userDidClickDoneButton(_ sender: NSButton) {
         if let missingField = validateForm() {
             missingField.swithToMissingInfoStyle("Required text here")
@@ -81,7 +84,7 @@ class NewDishFormController: NSViewController {
         model
             .userWantsToConfirmDishCreation(
                 name: nameLabel.stringValue,
-                price: priceLabel.stringValue,
+                price: priceLabel.doubleValue,
                 coverURLString: dishImageURL.stringValue
             )
     }

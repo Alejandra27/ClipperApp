@@ -74,6 +74,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="userDidClickDoneButton:" target="-2" id="59f-pB-w1Q"/>
+                    </connections>
                 </button>
                 <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vD3-ZG-7nA">
                     <rect key="frame" x="33" y="228" width="75" height="16"/>

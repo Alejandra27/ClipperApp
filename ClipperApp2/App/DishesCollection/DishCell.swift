@@ -40,6 +40,21 @@ class DishCell: NSCollectionViewItem {
     @IBOutlet weak var priceLabel: NSTextField!
     
     
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                view.backgroundColor = .systemBlue
+                nameLabel.textColor = .white
+                priceLabel.textColor = .white
+            } else {
+                view.backgroundColor = .clear
+                nameLabel.textColor = .textColor
+                priceLabel.textColor = .textColor
+            }
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

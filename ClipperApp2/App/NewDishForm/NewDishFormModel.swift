@@ -22,19 +22,19 @@ struct NewDishFormModel {
     
     func userWantsToConfirmDishCreation(
         name: String,
-        price: String,
+        price: Double,
         coverURLString: String
     ) {
         
         let dish = Dish(
-            name: "Pizza",
-            imageURL: URL(string: "https://www.hola.com/horizon/landscape/e9e1e82cb873-pepperoni-pizza-abob-t.jpg"),
+            name: name,
+            imageURL: URL(string: coverURLString),
             deliveryPerson: .init(
-                name: "Juan Pérez",
+                name: name,
                 id: 557789
                
             ),
-            price: 19800,
+            price: price,
             category: .mainCourse
         )
         
