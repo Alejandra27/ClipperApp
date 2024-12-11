@@ -37,6 +37,11 @@ extension MainModel {
     func viewIsReadyForData() {
         
     }
-    
+//    
+//    func userWantsToEditDish(position: Int) {
+//        let dish = dishes[position]
+//        windowOpener?.openEditDishWindow(dish: dish))
+//    }
+//    
    
 }

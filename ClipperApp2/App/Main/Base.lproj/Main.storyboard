@@ -756,8 +756,8 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="I1Y-ah-sie">
-                                <rect key="frame" x="171" y="223" width="62" height="32"/>
-                                <buttonCell key="cell" type="push" title="Add " bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jrh-dy-zWF">
+                                <rect key="frame" x="140" y="223" width="93" height="32"/>
+                                <buttonCell key="cell" type="push" title="Add Dish " bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jrh-dy-zWF">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>

@@ -8,9 +8,9 @@
         <customObject id="-2" userLabel="File's Owner" customClass="NewDishFormController" customModule="ClipperApp2" customModuleProvider="target">
             <connections>
                 <outlet property="cancelButton" destination="UoC-PP-qE0" id="TfN-cs-5on"/>
-                <outlet property="dishImageURL" destination="WPY-ec-uVa" id="8YH-Hy-4HS"/>
-                <outlet property="nameLabel" destination="GDR-4t-28z" id="NL2-lZ-u6u"/>
-                <outlet property="priceLabel" destination="ifW-dN-mw3" id="xHe-7x-UjX"/>
+                <outlet property="dishImageURL" destination="C19-8A-MG0" id="4Lq-gp-szI"/>
+                <outlet property="nameLabel" destination="2FM-aX-aCO" id="EfI-Oz-EUd"/>
+                <outlet property="priceLabel" destination="UZ0-wM-7Jr" id="FjQ-RN-ZIL"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="IgH-Ya-i4P"/>
             </connections>
         </customObject>

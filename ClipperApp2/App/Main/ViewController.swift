@@ -14,6 +14,10 @@ protocol WindowOpener: AnyObject {
 }
 
 
+protocol NewDisheWindowOpener: AnyObject {
+    func openNewDishWindow()
+}
+
 
 
 class ViewController: NSViewController {
