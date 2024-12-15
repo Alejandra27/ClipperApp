@@ -28,8 +28,11 @@ extension NSTextField {
 
 class NewDishFormController: NSViewController {
     
-    @IBOutlet weak var cancelButton: NSButton!
+    
     var model: NewDishFormModel
+    
+    @IBOutlet weak var cancelButton: NSButton!
+    
     
     
     @IBAction func userDidClickCancelButton(_ sender: Any) {
@@ -71,6 +74,11 @@ class NewDishFormController: NSViewController {
         cancelButton.change(color: .red)
         
         model.windowCloser = self
+        
+        if let dish = model.dish {
+            apply(dish: dish)
+        }
+
     }
 
     
@@ -88,6 +96,16 @@ class NewDishFormController: NSViewController {
                 price: priceLabel.doubleValue,
                 coverURLString: dishImageURL.stringValue
             )
+    }
+    
+    
+    private func apply(dish: Dish) {
+        view.window?.title = "Edit Book: \(dish.name)"
+        //headingLabel.stringValue = "Edit Dish"
+        nameLabel.stringValue = dish.name
+        priceLabel.doubleValue = dish.price
+        dishImageURL.stringValue
+        = dish.imageURL?.absoluteString ?? ""
     }
     
     private func validateForm() -> NSTextField? {

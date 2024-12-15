@@ -19,10 +19,10 @@ struct DeliveryPerson {
 struct Dish {
     static let dishTableId = "dishTable"
     
-    let name: String
-    let imageURL: URL?
+    var name: String
+    var imageURL: URL?
     let deliveryPerson: DeliveryPerson
-    let price: Double
+    var price: Double
     let category: DishCategory
 }
 

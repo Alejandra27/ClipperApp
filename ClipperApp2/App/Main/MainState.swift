@@ -11,8 +11,8 @@ import Foundation
 struct MainModel {
     
     
-    weak var collectionUpdater: CollectionUpdater?
-    weak var windowOpener: WindowOpener?
+    weak var collectionUpdaterDelegate: CollectionUpdater?
+    weak var windowOpener: DishWindowOpener? = nil
     
     
     var dishes: [Dish] = [

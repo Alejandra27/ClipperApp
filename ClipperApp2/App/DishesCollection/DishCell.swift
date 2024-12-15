@@ -28,14 +28,40 @@ extension NSView {
     
 }
 
+
+class DishImageView: NSImageView {
+    
+    override var image: NSImage? {
+        get {
+            return layer?.contents as? NSImage
+        }
+        set {
+            layer = .init()
+            layer?.contentsGravity = .resizeAspectFill
+            layer?.contents = newValue
+            wantsLayer = true
+        }
+    }
+    
+}
+
+
+
+
 class DishCell: NSCollectionViewItem {
     
 
     var dish: Dish?
     
-   
     
-    @IBOutlet weak var dishImageView: NSImageView!
+    
+    @IBOutlet weak var coverImageView: DishImageView!
+    
+    @IBOutlet weak var coverImageView2: DishImageView!
+    
+    //@IBOutlet weak var dishImageView: NSImageView!
+    
+    
     @IBOutlet weak var nameLabel: NSTextField!
     @IBOutlet weak var priceLabel: NSTextField!
     
@@ -99,7 +125,7 @@ class DishCell: NSCollectionViewItem {
                     )
                     self.setDishImage(image: image)
                 } else {
-                    // No es una imagen
+                
                     self.setDishImage(image: nil)
                 }
             } else {
@@ -113,7 +139,7 @@ class DishCell: NSCollectionViewItem {
     
     private func setDishImage(image: NSImage?) {
         DispatchQueue.main.async {
-            self.dishImageView.image = image
+            self.coverImageView.image = image
         }
     }
     

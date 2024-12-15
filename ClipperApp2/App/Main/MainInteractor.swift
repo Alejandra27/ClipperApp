@@ -14,14 +14,14 @@ extension MainModel {
         
         dishes.remove(at: position)
         
-        collectionUpdater?.reloadCollection()
+        collectionUpdaterDelegate?.reloadCollection()
     }
     
     mutating func userWantsToAddPlaceholderDish() {
         let placeholderDish = Dish.HotDog
         dishes.append(placeholderDish)
         
-        collectionUpdater?.reloadCollection()
+        collectionUpdaterDelegate?.reloadCollection()
     }
     
     func userWantsToCreateNewDish() {
@@ -30,18 +30,55 @@ extension MainModel {
     
     mutating func newDishWasCreated(dish: Dish) {
         dishes.append(dish)
-        collectionUpdater?.reloadCollection()
+        collectionUpdaterDelegate?.reloadCollection()
+    }
+    
+    
+    func userWantsToEditDish(position: Int) {
+        let dish = dishes[position]
+        
+        windowOpener?.openEditDishWindow(dish: dish)
     }
     
     
     func viewIsReadyForData() {
         
     }
-//    
-//    func userWantsToEditDish(position: Int) {
-//        let dish = dishes[position]
-//        windowOpener?.openEditDishWindow(dish: dish))
-//    }
-//    
+    
+    
+    mutating func dishWasEdited(dish: Dish) {
+        let index = dishes.firstIndex(where: {
+            $0.name == dish.name
+        })
+        
+        // Precondicionales
+        guard let index else {
+            // TODO: Display error on UI
+            return
+        }
+        
+        dishes[index] = dish
+        collectionUpdaterDelegate?.reloadCollection()
+    }
+    
+    
+    
+    
+    mutating func dishWasEditedV2(dish: Dish) {
+    
+        let index = dishes.firstIndex(where: {$0.name == dish.name
+        
+        })
+        
+        // Precondicionales
+        guard let index else {
+            
+            return
+        }
+        dishes[index] = dish
+        collectionUpdaterDelegate?.reloadCollection()
+        
+    }
+
    
 }

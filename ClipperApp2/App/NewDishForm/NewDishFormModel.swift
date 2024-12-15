@@ -10,15 +10,24 @@ import Foundation
 struct NewDishFormModel {
     
     
+    var dish: Dish?
+    
     weak var windowCloser: WindowCloser?
     
    
     var onAddDish: (Dish) -> Void = { dish in print(dish) }
+    var onEditDish: (Dish) -> Void = { dish in print(dish) }
     
 
     func userWantsToCancelDishCreation() {
         windowCloser?.close()
     }
+    
+    
+    
+    
+    
+    
     
     func userWantsToConfirmDishCreation(
         name: String,
@@ -26,22 +35,48 @@ struct NewDishFormModel {
         coverURLString: String
     ) {
         
-        let dish = Dish(
-            name: name,
-            imageURL: URL(string: coverURLString),
-            deliveryPerson: .init(
+        if var dish = dish {
+            let somethingChanged = dish.name != name || dish.price != price || dish.imageURL?.absoluteString != coverURLString
+            
+            if !somethingChanged {
+                windowCloser?.close()
+                return
+            }
+            
+            dish.name = name
+            dish.price = price
+            dish.imageURL = URL(string: coverURLString)
+            
+            // We trigger the book update
+            onEditDish(dish)
+            
+            // Then:
+            windowCloser?.close()
+        } else {
+            // We create the book
+            let dish = Dish(
                 name: name,
-                id: 557789
-               
-            ),
-            price: price,
-            category: .mainCourse
-        )
-        
-        
-        onAddDish(dish)
-        
-        windowCloser?.close()
+                imageURL: URL(string: coverURLString),
+                deliveryPerson: .init(
+                    name: name,
+                    id: 557789
+                   
+                ),
+                price: price,
+                category: .mainCourse
+            )
+            
+            
+            onAddDish(dish)
+            
+            windowCloser?.close()
+        }
     }
     
 }
+        
+        
+        
+        
+        
+        

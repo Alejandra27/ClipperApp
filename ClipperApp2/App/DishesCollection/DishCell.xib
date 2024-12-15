@@ -7,7 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="DishCell" customModule="ClipperApp2" customModuleProvider="target">
             <connections>
-                <outlet property="dishImageView" destination="gDy-Cd-WWi" id="9ID-IF-AJ9"/>
+                <outlet property="coverImageView" destination="gDy-Cd-WWi" id="DVu-fO-fmw"/>
                 <outlet property="nameLabel" destination="DwK-0M-Vff" id="1hH-pL-ebn"/>
                 <outlet property="priceLabel" destination="i3y-vE-6F4" id="cEY-zc-Ggv"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
@@ -15,7 +15,6 @@
         </customObject>
         <collectionViewItem id="dlb-q4-e2k" customClass="DishCell" customModule="ClipperApp2" customModuleProvider="target">
             <connections>
-                <outlet property="dishImageView" destination="gDy-Cd-WWi" id="y7m-48-Nko"/>
                 <outlet property="nameLabel" destination="DwK-0M-Vff" id="lZ1-3f-chB"/>
                 <outlet property="priceLabel" destination="i3y-vE-6F4" id="l5g-hH-NQr"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="rd6-KY-rM7"/>

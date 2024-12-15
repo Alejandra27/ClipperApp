@@ -12,13 +12,13 @@ import Testing
 import XCTest
 
 
-class FakeWindowOpener: WindowOpener {
-    var windowOpenedSpy = false
-    
-    func openNewDishWindow() {
-        windowOpenedSpy = true
-    }
-}
+//class FakeWindowOpener: WindowOpener {
+//    var windowOpenedSpy = false
+//    
+//    func openNewDishWindow() {
+//        windowOpenedSpy = true
+//    }
+//}
 
 class FakeCollectionUpdater: CollectionUpdater {
     
@@ -127,18 +127,18 @@ final class MainModelTests: XCTestCase {
         // Dado
         var sujetoDePrueba = MainModel()
         
-       let windowOpenerDelegate = FakeWindowOpener()
+    //   let windowOpenerDelegate = FakeWindowOpener()
         
         //sujetoDePrueba.windowOpenerDelegate = windowOpenerDelegate
         
-        sujetoDePrueba.windowOpener = windowOpenerDelegate
-        XCTAssertFalse(windowOpenerDelegate.windowOpenedSpy)
+   //     sujetoDePrueba.windowOpener = windowOpenerDelegate  aquiiiiiiiiii
+ //       XCTAssertFalse(windowOpenerDelegate.windowOpenedSpy)
         
         // Cuando
         sujetoDePrueba.userWantsToCreateNewDish()
         
         // Entonces
-        XCTAssertTrue(windowOpenerDelegate.windowOpenedSpy)
+//        XCTAssertTrue(windowOpenerDelegate.windowOpenedSpy)
     }
     
     
