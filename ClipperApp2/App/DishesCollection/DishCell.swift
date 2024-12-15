@@ -57,10 +57,6 @@ class DishCell: NSCollectionViewItem {
     
     @IBOutlet weak var coverImageView: DishImageView!
     
-    @IBOutlet weak var coverImageView2: DishImageView!
-    
-    //@IBOutlet weak var dishImageView: NSImageView!
-    
     
     @IBOutlet weak var nameLabel: NSTextField!
     @IBOutlet weak var priceLabel: NSTextField!

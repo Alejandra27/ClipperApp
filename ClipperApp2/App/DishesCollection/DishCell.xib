@@ -15,6 +15,7 @@
         </customObject>
         <collectionViewItem id="dlb-q4-e2k" customClass="DishCell" customModule="ClipperApp2" customModuleProvider="target">
             <connections>
+                <outlet property="coverImageView" destination="gDy-Cd-WWi" id="phx-rE-4gL"/>
                 <outlet property="nameLabel" destination="DwK-0M-Vff" id="lZ1-3f-chB"/>
                 <outlet property="priceLabel" destination="i3y-vE-6F4" id="l5g-hH-NQr"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="rd6-KY-rM7"/>
@@ -26,7 +27,7 @@
             <rect key="frame" x="0.0" y="0.0" width="123" height="180"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gDy-Cd-WWi">
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gDy-Cd-WWi" customClass="DishImageView" customModule="ClipperApp2" customModuleProvider="target">
                     <rect key="frame" x="20" y="68" width="83" height="92"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="83" id="QXU-Xu-jx5"/>
