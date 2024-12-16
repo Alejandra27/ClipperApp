@@ -41,6 +41,15 @@ extension MainModel {
     }
     
     
+    func userWantsToAddDelivery(delivery: String) {
+        
+        let delivery = delivery
+        
+        
+    }
+    
+    
+    
     func viewIsReadyForData() {
         
     }

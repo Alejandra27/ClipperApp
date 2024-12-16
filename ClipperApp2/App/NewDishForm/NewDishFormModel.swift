@@ -47,13 +47,13 @@ struct NewDishFormModel {
             dish.price = price
             dish.imageURL = URL(string: coverURLString)
             
-            // We trigger the book update
+            // We trigger the dish update
             onEditDish(dish)
             
             // Then:
             windowCloser?.close()
         } else {
-            // We create the book
+            // We create the dish
             let dish = Dish(
                 name: name,
                 imageURL: URL(string: coverURLString),

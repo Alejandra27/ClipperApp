@@ -16,7 +16,7 @@ protocol ClipperCollectionViewDelegate: AnyObject {
 class ClipperCollectionView: NSCollectionView {
     
     weak var clipperDelegate: ClipperCollectionViewDelegate?
-    
+    	
     override func menu(for event: NSEvent) -> NSMenu? {
         var menu = super.menu(for: event)
         

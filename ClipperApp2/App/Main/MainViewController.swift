@@ -17,11 +17,6 @@ protocol DishWindowOpener: AnyObject {
 }
 
 
-//protocol NewDisheWindowOpener: AnyObject {
-//    func openNewDishWindow()
-//}
-
-
 
 class MainViewController: NSViewController {
     
@@ -41,15 +36,15 @@ class MainViewController: NSViewController {
     @IBOutlet weak var dishesCollectionView: ClipperCollectionView!
     
  
-    @IBAction func userDidClickDeleteButton(_ sender: NSButton) {
-        let selectedIndexes = dishesCollectionView.selectionIndexes
-        let singleSelectedIndex = selectedIndexes.first
-        
-        guard let singleSelectedIndex else { return }
-        
-        model.userWantsToDeleteDish(position: singleSelectedIndex)
-        
-    }
+//    @IBAction func userDidClickDeleteButton(_ sender: NSButton) {
+//        let selectedIndexes = dishesCollectionView.selectionIndexes
+//        let singleSelectedIndex = selectedIndexes.first
+//        
+//        guard let singleSelectedIndex else { return }
+//        
+//        model.userWantsToDeleteDish(position: singleSelectedIndex)
+//        
+//    }
     
     @IBAction func userDidClickAddPlaceholderButton(_ sender: Any) {
         model.userWantsToAddPlaceholderDish()
@@ -67,11 +62,15 @@ class MainViewController: NSViewController {
         super.viewDidLoad()
         dishesCollectionView.register(DishCell.self, forItemWithIdentifier: .init("dishCell"))
         dishesCollectionView.dataSource = self
+        
         dishesCollectionView.isSelectable = true
+        dishesScrollView.scrollerInsets = .init(top: 50, left: 10, bottom: 10, right: 10)
+        dishesClipView.contentInsets = .init(top: 50, left: 10, bottom: 10, right: 10)
         
         model.collectionUpdaterDelegate = self
         
-       model.windowOpener = self
+        model.windowOpener = self
+        dishesCollectionView.clipperDelegate = self
         
         model.viewIsReadyForData()
     }
@@ -213,22 +212,26 @@ extension MainViewController: ClipperCollectionViewDelegate {
                 keyEquivalent: "d"
             )
         
+        menu
+            .addItem(
+                withTitle: "Asignar Delivery",
+                action: #selector(userDidClickDeleteOnContextualMenu),
+                keyEquivalent: "d"
+            )
+        
         return menu
     }
     
     @objc private func userDidClickEditOnContextualMenu() {
         guard let lastSelectedIndexPath else { return }
         
-        //model.userWantsToEditBook(position: lastSelectedIndexPath.item)
-        
+      
         model.userWantsToEditDish(position: lastSelectedIndexPath.item)
     }
     
     @objc private func userDidClickDeleteOnContextualMenu() {
         guard let lastSelectedIndexPath else { return }
-        
-        //model.userWantsToDeleteBook(position: lastSelectedIndexPath.item)
-        
+      
         model.userWantsToDeleteDish(position: lastSelectedIndexPath.item)
     }
     

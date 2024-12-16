@@ -100,7 +100,7 @@ class NewDishFormController: NSViewController {
     
     
     private func apply(dish: Dish) {
-        view.window?.title = "Edit Book: \(dish.name)"
+        view.window?.title = "Edit Dish: \(dish.name)"
         //headingLabel.stringValue = "Edit Dish"
         nameLabel.stringValue = dish.name
         priceLabel.doubleValue = dish.price
